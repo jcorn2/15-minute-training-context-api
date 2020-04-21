@@ -6,7 +6,7 @@ import {
 
 const useStyles = makeStyles({
     scoreboard: {
-        backgroundColor: '#4907d7',
+        backgroundColor: '#4907D7',
         gridArea: 'scorebar',
         maxWidth: 'none',
     },
