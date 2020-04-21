@@ -3,12 +3,14 @@ import { makeStyles } from '@material-ui/styles';
 import {
   Container,
 } from '@material-ui/core';
+import Score from './score/Score';
 
 const useStyles = makeStyles({
     scoreboard: {
         backgroundColor: '#4907D7',
         gridArea: 'scorebar',
         maxWidth: 'none',
+        display: 'flex',
     },
 });
 
@@ -17,7 +19,8 @@ function Scoreboard() {
 
     return (
         <Container className={classes.scoreboard}>
-            Scorecard
+            <Score playerName="You" />
+            <Score playerName="Computer" />
         </Container>
     );
 }
