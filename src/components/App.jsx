@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 import Scoreboard from './scoreboard/Scoreboard';
 import Footer from './footer/Footer';
+import MainArea from './mainArea/MainArea';
 
 const useStyles = makeStyles({
   game: {
@@ -29,6 +30,7 @@ function App() {
   return (
     <Container className={classes.game}>
       <Scoreboard />
+      <MainArea />
       <Footer />
     </Container>
   );
