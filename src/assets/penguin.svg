@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" id="svg2975" viewBox="0 0 620 810" version="1.0">
+<svg viewBox="0 0 620 810" version="1.0">
   <g id="g2326" transform="translate(15.547 7.7735)">
     <path id="path3799" opacity=".429" d="m346.08 465.54a269.47 64.291 0 1 1 -538.95 0 269.47 64.291 0 1 1 538.95 0z" transform="matrix(1.1015 0 0 1 217.92 262.82)"/>
     <path id="path1564" stroke="#000" stroke-width="6.3135" stroke-linecap="round" d="m280.71 3.8285c-54.77 7.2235-97.15 53.986-97.15 110.72 0 41.55 13.27 69.53 8.46 103.88-9.74 69.64-152.76 123.01-152.76 246.09 0 143.38 116.38 259.76 259.76 259.76 143.39 0 259.76-116.38 259.76-259.76 0-124.93-127.6-166.81-159.9-232.14-9.88-43.35 8.38-77.11 8.38-117.83 0-58.939-45.68-107.14-103.54-111.39-40.17-0.0497-11.88 1.7662-23.01 0.6685z"/>
@@ -19,23 +19,4 @@
     <path id="path2395" d="m282.94 707.66c15.47 14.3 16.39 38.46 2.08 53.94-8.73 9.44-168.19 6.23-175.58-0.61-15.472-14.3-16.421-38.5-2.12-53.97 14.29-15.45 40.46-9 53.87-2.15 37.86-18.64 49.52-13.67 73.13 0.22 11.84-3.06 34.92-10.1 48.62 2.57z" stroke="#000" stroke-linecap="round" stroke-width="12.281" fill="#f8bc0c"/>
     <path id="path1610" d="m316.13 707.3c-15.47 14.3-16.38 38.46-2.08 53.93 8.73 9.45 168.19 6.24 175.58-0.6 15.47-14.3 16.42-38.5 2.12-53.97-14.28-15.45-40.46-9-53.87-2.15-37.86-18.65-49.51-13.68-73.13 0.22-11.83-3.06-34.91-10.1-48.62 2.57z" stroke="#000" stroke-linecap="round" stroke-width="12.281" fill="#f8bc0c"/>
   </g>
-  <metadata>
-    <rdf:RDF>
-      <cc:Work>
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
-        <dc:publisher>
-          <cc:Agent rdf:about="http://openclipart.org/">
-            <dc:title>Openclipart</dc:title>
-          </cc:Agent>
-        </dc:publisher>
-      </cc:Work>
-      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
-        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
-        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
-        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
-      </cc:License>
-    </rdf:RDF>
-  </metadata>
 </svg>
