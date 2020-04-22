@@ -2,12 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import {
   Container,
-  IconButton,
 } from '@material-ui/core';
-import { ReactComponent as Rock } from '@fortawesome/fontawesome-free/svgs/regular/hand-rock.svg';
-import { ReactComponent as Paper } from '@fortawesome/fontawesome-free/svgs/regular/hand-paper.svg';
-import { ReactComponent as Scissors } from '@fortawesome/fontawesome-free/svgs/regular/hand-scissors.svg';
 import { ReactComponent as Penguin } from 'assets/penguin.svg';
+import GameControls from 'components/mainArea/gameControls/GameControls';
 
 const useStyles = makeStyles({
     gameIcon: {
@@ -37,17 +34,7 @@ function Player() {
     return (
         <Container className={classes.player}>
             <Penguin className={classes.penguin} />
-            <Container className={classes.gameIconsContainer}>
-                <IconButton>
-                    <Rock className={classes.gameIcon} />
-                </IconButton>
-                <IconButton>
-                    <Paper className={classes.gameIcon} />
-                </IconButton>
-                <IconButton>
-                    <Scissors className={classes.gameIcon} />
-                </IconButton>
-            </Container>
+            <GameControls />
         </Container>
     );
 }

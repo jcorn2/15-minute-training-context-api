@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import 'typeface-roboto';
 import 'typeface-roboto-mono';
 import { makeStyles } from '@material-ui/styles';
@@ -8,6 +8,7 @@ import {
 import Scoreboard from './scoreboard/Scoreboard';
 import Footer from './footer/Footer';
 import MainArea from './mainArea/MainArea';
+import AppContext, { initialState, reducer } from './AppContext';
 
 const useStyles = makeStyles({
   game: {
@@ -26,13 +27,16 @@ const useStyles = makeStyles({
 
 function App() {
   const classes = useStyles();
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <Container className={classes.game}>
-      <Scoreboard />
-      <MainArea />
-      <Footer />
-    </Container>
+    <AppContext.Provider value={{ state, dispatch }}>
+      <Container className={classes.game}>
+        <Scoreboard />
+        <MainArea />
+        <Footer />
+      </Container>
+    </AppContext.Provider>
   );
 }
 

@@ -19,8 +19,8 @@ function Scoreboard() {
 
     return (
         <Container className={classes.scoreboard}>
-            <Score playerName="You" />
-            <Score playerName="Computer" />
+            <Score playerName="You" player="player1" />
+            <Score playerName="Computer" player="computer" />
         </Container>
     );
 }
