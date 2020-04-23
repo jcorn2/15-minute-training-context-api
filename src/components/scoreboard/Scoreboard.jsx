@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import {
-  Container,
+    Container,
 } from '@material-ui/core';
 import Score from './score/Score';
 
