@@ -3,8 +3,8 @@ import React from 'react';
 const initialState = {
     player1Score: 0,
     computerScore: 0,
-    player1Choice: 'rock',
-    computerChoice: 'rock',
+    player1Choice: '',
+    computerChoice: '',
     playingGame: false,
     gameOver: false,
 };
@@ -18,6 +18,7 @@ const reducer = (state, action) => {
             return { ...state, computerChoice: action.choice, gameOver: true };
         case 'PLAY_GAME':
             return { ...state, playingGame: true };
+        case 'RESTART':
         default:
             return initialState;
     };

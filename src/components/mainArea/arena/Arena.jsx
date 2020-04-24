@@ -16,10 +16,15 @@ const useStyles = makeStyles({
         alignItems: 'center',
         padding: '16px 8px',
     },
-    playButton: {
+    button: {
         backgroundColor: 'green',
         height: '50px',
         width: '150px',
+    },
+    buttonsContainer: {
+        display: 'flex',
+        justifyContent: 'space-around',
+        width: '100%',
     },
 });
 
@@ -30,17 +35,23 @@ function Arena() {
 
     const playGame = () => dispatch({ type: 'PLAY_GAME' });
 
+    const restart = () => {
+        setWinner('');
+        dispatch({ type: 'RESTART' });
+    };
+
     useEffect(() => {
         if (state.gameOver) {
-            switch (state.player1Choice) {
-                case 'rock':
-                    setWinner(state.computerChoice === 'scissors' ? 'player1' : 'computer');
+            switch (`${state.player1Choice}${state.computerChoice}`) {
+                case 'rockpaper':
+                case 'rockscissors':
+                case 'scissorspaper':
+                    setWinner('player1');
                     break;
-                case 'scissors':
-                    setWinner(state.computerChoice === 'paper' ? 'player1' : 'computer');
-                    break;
-                case 'paper':
-                    setWinner(state.computerChoice === 'rock' ? 'player1' : 'computer');
+                case 'paperrock':
+                case 'scissorsrock':
+                case 'paperscissors':
+                    setWinner('computer');
                     break;
                 default:
                     setWinner('It is a draw!');
@@ -50,9 +61,12 @@ function Arena() {
 
     return (
         <Container className={classes.arena}>
-            <Typography>{`And the winner is... ${winner}`}</Typography>
+            <Typography>And the winner is...</Typography>
             {Boolean(winner) && <Typography>{winner}</Typography>}
-            <Button className={classes.playButton} onClick={playGame}>Play Game</Button>
+            <div className={classes.buttonsContainer}>
+                <Button className={classes.button} onClick={playGame}>Play Game</Button>
+                {Boolean(winner) && <Button className={classes.button} onClick={restart}>Restart</Button>}
+            </div>
         </Container>
     );
 }
