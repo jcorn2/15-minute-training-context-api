@@ -8,7 +8,7 @@ const Wrapper = () => {
 
     return (
         <AppContext.Provider value={{ state, dispatch }}>
-            <GameControls />
+            <GameControls playerName="player1" />
         </AppContext.Provider>
     );
 };

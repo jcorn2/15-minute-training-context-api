@@ -34,7 +34,7 @@ function Player() {
     return (
         <Container className={classes.player}>
             <Penguin className={classes.penguin} />
-            <GameControls />
+            <GameControls playerName="player1" />
         </Container>
     );
 }
