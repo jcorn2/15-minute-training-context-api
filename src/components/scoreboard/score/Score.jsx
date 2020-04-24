@@ -28,7 +28,7 @@ const useStyles = makeStyles({
 function Score({ player, playerName }) {
     const classes = useStyles();
     const direction = playerName === 'Computer' && classes.computer;
-    const { state, dispatch } = useContext(AppContext);
+    const { state } = useContext(AppContext);
 
     return (
         <Container className={`${classes.scoreContainer} ${direction}`}>

@@ -5,6 +5,8 @@ const initialState = {
     computerScore: 0,
     player1Choice: 'rock',
     computerChoice: 'rock',
+    playingGame: false,
+    gameOver: false,
 };
 
 const reducer = (state, action) => {
@@ -12,6 +14,10 @@ const reducer = (state, action) => {
     switch (action.type) {
         case 'CHANGE_CHOICE_FOR_PLAYER1':
             return { ...state, player1Choice: action.newChoice };
+        case 'COMPUTER_MADE_CHOICE':
+            return { ...state, computerChoice: action.choice, gameOver: true };
+        case 'PLAY_GAME':
+            return { ...state, playingGame: true };
         default:
             return initialState;
     };
