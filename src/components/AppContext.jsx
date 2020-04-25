@@ -7,6 +7,7 @@ const initialState = {
     computerChoice: '',
     playingGame: false,
     gameOver: false,
+    winner: '',
 };
 
 const reducer = (state, action) => {
@@ -15,10 +16,17 @@ const reducer = (state, action) => {
         case 'CHANGE_CHOICE_FOR_PLAYER1':
             return { ...state, player1Choice: action.newChoice };
         case 'COMPUTER_MADE_CHOICE':
-            return { ...state, computerChoice: action.choice, gameOver: true };
+            return { ...state, playingGame: false, computerChoice: action.choice, gameOver: true };
         case 'PLAY_GAME':
             return { ...state, playingGame: true };
+        case 'SET_WINNER':
+            return { ...state, winner: action.winner };
+        case 'CHANGE_PLAYER1_SCORE':
+            return { ...state, player1Score: action.player1Score };
+        case 'CHANGE_COMPUTER_SCORE':
+            return { ...state, computerScore: action.computerScore };
         case 'RESTART':
+            return { ...initialState, player1Score: state.player1Score, computerScore: state.computerScore };
         default:
             return initialState;
     };
