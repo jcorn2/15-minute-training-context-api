@@ -1,10 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import {
   Container,
 } from '@material-ui/core';
 import { ReactComponent as Toucan } from 'assets/toucan.svg';
-import AppContext from 'components/AppContext';
 import GameControls from 'components/mainArea/gameControls/GameControls';
 
 const useStyles = makeStyles({
@@ -23,21 +22,6 @@ const useStyles = makeStyles({
 
 function Computer() {
     const classes = useStyles();
-    const { state, dispatch } = useContext(AppContext);
-
-    useEffect(() => {
-        if (state.playingGame) {
-            const ranNum = Math.random();
-            let choice = 'scissors';
-            if (ranNum < 0.34) {
-                choice = 'rock';
-            } else if (ranNum < 0.67) {
-                choice = 'paper';
-            }
-
-            dispatch({ type: 'COMPUTER_MADE_CHOICE', choice });
-        }
-    }, [state.playingGame, dispatch]);
 
     return (
         <Container className={classes.player}>

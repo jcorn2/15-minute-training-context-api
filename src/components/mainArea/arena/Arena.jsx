@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import {
     Button,
@@ -32,28 +32,50 @@ function Arena() {
     const classes = useStyles();
     const { state, dispatch } = useContext(AppContext);
 
-    const playGame = () => dispatch({ type: 'PLAY_GAME' });
+    const playGame = () => {
+        const ranNum = Math.random();
+        let computerChoice = 'scissors';
+        if (ranNum < 0.34) {
+            computerChoice = 'rock';
+        } else if (ranNum < 0.67) {
+            computerChoice = 'paper';
+        }
+
+        switch (`${state.player1Choice}${computerChoice}`) {
+            case 'paperrock':
+            case 'rockscissors':
+            case 'scissorspaper':
+                dispatch({ 
+                    type: 'SET_WINNER', 
+                    winner: 'player1', 
+                    player1Score: state.player1Score + 1, 
+                    computerScore: state.computerScore, 
+                    computerChoice,
+                });
+                break;
+            case 'rockpaper':
+            case 'scissorsrock':
+            case 'paperscissors':
+                dispatch({ 
+                    type: 'SET_WINNER', 
+                    winner: 'computer', 
+                    player1Score: state.player1Score, 
+                    computerScore: state.computerScore + 1,  
+                    computerChoice,
+                });
+                break;
+            default:
+                dispatch({ 
+                    type: 'SET_WINNER', 
+                    winner: 'It is a draw!', 
+                    player1Score: state.player1Score, 
+                    computerScore: state.computerScore,  
+                    computerChoice,
+                });
+        }
+    };
 
     const restart = () => dispatch({ type: 'RESTART' });
-
-    useEffect(() => {
-        if (state.gameOver) {
-            switch (`${state.player1Choice}${state.computerChoice}`) {
-                case 'paperrock':
-                case 'rockscissors':
-                case 'scissorspaper':
-                    dispatch({ type: 'SET_WINNER', winner: 'player1' });
-                    break;
-                case 'rockpaper':
-                case 'scissorsrock':
-                case 'paperscissors':
-                    dispatch({ type: 'SET_WINNER', winner: 'computer' });
-                    break;
-                default:
-                    dispatch({ type: 'SET_WINNER', winner: 'It is a draw!' });
-            }
-        }
-    }, [state.gameOver, state.computerChoice, state.player1Choice, dispatch]);
 
     return (
         <Container className={classes.arena}>
