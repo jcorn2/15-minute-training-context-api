@@ -15,6 +15,7 @@ const useStyles = makeStyles({
         justifyContent: 'space-around',
         alignItems: 'center',
         padding: '16px 8px',
+        background: 'orange', 
     },
     button: {
         backgroundColor: 'green',
@@ -25,6 +26,10 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'space-around',
         width: '100%',
+    },
+    winnerText: {
+        height: '50px',
+        fontSize: '32pt',
     },
 });
 
@@ -79,11 +84,11 @@ function Arena() {
 
     return (
         <Container className={classes.arena}>
-            <Typography>And the winner is...</Typography>
-            {Boolean(state.winner) && <Typography>{state.winner}</Typography>}
+            <Typography className={classes.winnerText}>And the winner is...</Typography>
+            <Typography className={classes.winnerText}>{state.winner}</Typography>
             <div className={classes.buttonsContainer}>
                 <Button className={classes.button} onClick={playGame}>Play Game</Button>
-                {Boolean(state.winner) && <Button className={classes.button} onClick={restart}>Restart</Button>}
+                <Button className={classes.button} onClick={restart}>Restart</Button>
             </div>
         </Container>
     );

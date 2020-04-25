@@ -25,6 +25,7 @@ const useStyles = makeStyles({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        background: 'purple',
     },
 });
 
